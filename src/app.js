@@ -26,7 +26,7 @@ app.get('/help',(req,res)=>{
 app.get('/weather',(req,res)=>{
     if(!req.query.address){
         return res.send({
-            error:'You must provide an address'
+            error:'You must provide an address!'
         })
     }
     forecast(req.query.address, (error, response)=>{
