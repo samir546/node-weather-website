@@ -39,7 +39,10 @@ app.get('/weather',(req,res)=>{
             res.send({
                 temperature: response.body.current.temperature,
                 location: response.body.location.name,
-                address: req.query.address 
+                region: response.body.location.region,
+                country: response.body.location.country,
+                description: response.body.current.weather_descriptions[0],
+                feelslike:  response.body.current.feelslike
             })
         }
     })
